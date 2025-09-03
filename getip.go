@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func getPublicIPv4() {
+func getPublicIP() {
 	resp, err := http.Get("https://api.ipify.org")
 	if err != nil {
 		panic(err)
@@ -35,9 +35,10 @@ func getLocalIP() {
 }
 
 func getIPv6() {
-	resp, err := http.Get("https://api64.ipify.org")
+	resp, err := http.Get("https://api6.ipify.org")
 	if err != nil {
-		panic(err)
+		fmt.Printf("Public IPv6:  not available\n")
+		return
 	}
 	ip, _ := io.ReadAll(resp.Body)
 	fmt.Printf("Public IPv6: %s\n", ip)
@@ -50,7 +51,7 @@ func main() {
 	flag.Parse()
 
 	if *getpublic {
-		getPublicIPv4()
+		getPublicIP()
 	}
 	if *getlocal {
 		getLocalIP()
