@@ -1,0 +1,4 @@
+# Ignore Go build output
+/getip
+/getip.exe
+/getip.out
