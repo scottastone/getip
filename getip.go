@@ -45,11 +45,17 @@ func getIPv6() {
 }
 
 func main() {
+	helpflag := flag.Bool("h", false, "Show this help message.")
 	getpublic := flag.Bool("public", true, "Get public IPv4 address")
 	getlocal := flag.Bool("local", true, "Get local IPv4 address")
 	getipv6 := flag.Bool("ipv6", true, "Get IPv6 address.")
 	flag.Parse()
 
+	if *helpflag {
+		flag.Usage()
+		fmt.Println("Usage: getip [-public] [-local] [-ipv6]")
+		return
+	}
 	if *getpublic {
 		getPublicIP()
 	}
