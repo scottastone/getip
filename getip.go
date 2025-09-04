@@ -11,7 +11,8 @@ import (
 func getPublicIP() {
 	resp, err := http.Get("https://api.ipify.org")
 	if err != nil {
-		panic(err)
+		fmt.Printf("Public IPv4:  not available (no connection)\n")
+		return
 	}
 	ip, _ := io.ReadAll(resp.Body)
 	fmt.Printf("Public IPv4: %s\n", ip)
