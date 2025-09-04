@@ -2,7 +2,7 @@
 
 `getip` is a simple Go command-line tool to retrieve your public IP address. It makes an HTTP request to a public IP service and prints the result.
 
-It also knows to ignore local loopback addresses when listing local IPs.
+It also knows to ignore local loopback addresses when listing local IPs. Unless you have something weird going on.
 
 ## Features
 
@@ -33,7 +33,7 @@ Local IPv4:  100.112.158.63
 
 ## Requirements
 
-- Go 1.18 or newer
+- Go 1.18 or newer (I think..)
 
 ## License
 
